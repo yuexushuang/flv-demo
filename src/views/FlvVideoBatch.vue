@@ -1,8 +1,8 @@
 <template>
     <div style="height:100%;width:100%;">
         <div style="height:60px;width:100%;">
-            <button v-on:click="playAllVideo">play all video</button>
-            <button v-on:click="killAllVideo">kill all video</button>
+            <button v-on:click="playAllVideo">Êí≠ÊîæËßÜÈ¢ë</button>
+            <button v-on:click="killAllVideo">ÈîÄÊØÅËßÜÈ¢ë</button>
         </div>
         <div style="height:calc(100% - 60px);width:100%;">
             <div v-for="(item,index) in videos" class="video">
@@ -15,17 +15,18 @@
     import flvjs from "flv.js"
 
     export default {
-        name: "VideoPanel",
+        name: "FlvVideoBatch",
         data() {
             return {
                 videos: [
-                    "http://117.160.157.90:8073/yxl_3/live.flv?sign=4100731932000-696d2c9f683c5ba2f973604372403884",
-                    "http://117.160.157.90:8073/yxl_4/live.flv?sign=4100731932000-97090a965510900fffc25bbf2f07a9ea",
-                    "http://117.160.157.90:8073/yxl_5/live.flv?sign=4100731932000-d957c40ba7384ed9e27f52b9f832d4be",
-                    "http://117.160.157.90:8073/yxl_6/live.flv?sign=4100731932000-d98e1388f1cc232ae2ebb239a3f6d86d",
-                    "http://117.160.157.90:8073/yxl_2/live.flv?sign=4100731932000-90d38664f93ea5a0543f319e6cffed28",
-                    "http://117.160.157.90:8073/yxl_7/live.flv?sign=4100731932000-c9d191160807d7ab6c0567ebf1b64df0",
-                    "http://117.160.157.90:8073/yxl_1/live.flv?sign=4100731932000-4e5ed7ef5a9ef7ca9538c2536882aba1"
+                    "https://flvopen.ys7.com:9188/openlive/1a0d37dd5bfa48ea928ea301b460e445.flv",
+                    //"http://117.160.157.90:8073/yxl_3/live.flv?sign=4100731932000-696d2c9f683c5ba2f973604372403884",
+                    //"http://117.160.157.90:8073/yxl_4/live.flv?sign=4100731932000-97090a965510900fffc25bbf2f07a9ea",
+                    //"http://117.160.157.90:8073/yxl_5/live.flv?sign=4100731932000-d957c40ba7384ed9e27f52b9f832d4be",
+                    //"http://117.160.157.90:8073/yxl_6/live.flv?sign=4100731932000-d98e1388f1cc232ae2ebb239a3f6d86d",
+                    //"http://117.160.157.90:8073/yxl_2/live.flv?sign=4100731932000-90d38664f93ea5a0543f319e6cffed28",
+                    //"http://117.160.157.90:8073/yxl_7/live.flv?sign=4100731932000-c9d191160807d7ab6c0567ebf1b64df0",
+                    //"http://117.160.157.90:8073/yxl_1/live.flv?sign=4100731932000-4e5ed7ef5a9ef7ca9538c2536882aba1"
                 ],
                 players: []
             }
@@ -55,7 +56,7 @@
                 for (var i = 0; i < this.players.length; i++) {
                     let player = this.players[i];
                     //player._transmuxer._controller.stop();
-                    player.unload();    //µ˜”√À¸µƒunload∑Ω∑®≤≈ƒ‹¥ÔµΩº»‘›Õ£”÷Õ£÷π¿≠¡˜°£
+                    player.unload();    //Ë∞ÉÁî®ÂÆÉÁöÑunloadÊñπÊ≥ïÊâçËÉΩËææÂà∞Êó¢ÊöÇÂÅúÂèàÂÅúÊ≠¢ÊãâÊµÅ„ÄÇ
                     player.destroy();
                     console.log("destroy" + i);
                 }
